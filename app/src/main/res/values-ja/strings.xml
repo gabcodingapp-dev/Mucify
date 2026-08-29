@@ -797,7 +797,7 @@
     <string name="target_language">対象言語</string>
     <string name="close_dialog">閉じる</string>
     <string name="support_development_title">サポート開発</string>
-    <string name="support_development_message">ちょっと、そこ！ Mucify開発者のrukamoriです。 Mucify が毎日のリスニングに活用されている場合は、GitHub でプロジェクトに寄付したりスターを付けたりすることで、Mucify を前進させることができます。アプリの開発にご協力いただきありがとうございます。</string>
+    <string name="support_development_message">ちょっと、そこ！ Mucify開発者のGabです。 Mucify が毎日のリスニングに活用されている場合は、GitHub でプロジェクトに寄付したりスターを付けたりすることで、Mucify を前進させることができます。アプリの開発にご協力いただきありがとうございます。</string>
     <string name="support_development_donate">開発をサポートするために寄付する</string>
     <string name="support_development_star">GitHub でスターを付ける</string>
     <string name="later">後で</string>
@@ -1108,5 +1108,5 @@
     <string name="scheduled_backup_directory_saved">バックアップディレクトリが保存されました</string>
     <string name="scheduled_backup_load_failed">スケジュールされたバックアップ設定をロードできませんでした</string>
     <string name="scheduled_backup_update_failed">スケジュールされたバックアップ設定を保存できませんでした</string>
-    <string name="gatekeeper_connection_blocked">Mucify Remote によって接続がブロックされました。このアプリは正式な Mucify ビルドとして検証できませんでした。 https://github.com/rukamori/Mucify または https://t.me/MucifyGC から公式ビルドをインストールします。</string>
+    <string name="gatekeeper_connection_blocked">Mucify Remote によって接続がブロックされました。このアプリは正式な Mucify ビルドとして検証できませんでした。 https://github.com/Gab/Mucify または  から公式ビルドをインストールします。</string>
 </resources>

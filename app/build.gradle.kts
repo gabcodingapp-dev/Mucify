@@ -25,7 +25,7 @@ fun String.asBuildConfigString(): String =
             .replace("\t", "\\t")
     }\""
 
-val fallbackDataServerUrl = "archive-tune-admin-remote.vercel.app"
+val fallbackDataServerUrl = "github.com/gabcodingapp-dev/Mucify"
 val dataServerUrl =
     rootProject
         .file("DataServer.txt")
@@ -263,7 +263,6 @@ dependencies {
     implementation(libs.concurrent.futures)
 
     implementation(libs.activity)
-    implementation(libs.splashscreen)
     implementation(libs.navigation)
     implementation(libs.hilt.navigation)
     implementation(libs.datastore)
