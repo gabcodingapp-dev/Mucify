@@ -14,10 +14,10 @@ import androidx.media3.exoplayer.offline.DownloadService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import moe.rukamori.archivetune.db.MusicDatabase
-import moe.rukamori.archivetune.db.entities.Album
 import moe.rukamori.archivetune.playback.ExoDownloadService
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -39,7 +39,8 @@ class SpotifyAlbumExportUseCase @Inject constructor(
         emit(AlbumExportState.Exporting(0f, "Fetching album information..."))
         
         try {
-            val album = database.album(albumId)
+            val albumFlow = database.album(albumId)
+            val album = albumFlow.first()
             if (album == null) {
                 emit(AlbumExportState.Error("Album not found"))
                 return@flow
@@ -47,7 +48,7 @@ class SpotifyAlbumExportUseCase @Inject constructor(
             
             emit(AlbumExportState.Exporting(0.2f, "Loading album tracks..."))
             
-            val songs = database.albumSongs(albumId)
+            val songs = database.albumSongs(albumId).first()
             if (songs.isEmpty()) {
                 emit(AlbumExportState.Error("No songs found in album"))
                 return@flow
@@ -76,7 +77,7 @@ class SpotifyAlbumExportUseCase @Inject constructor(
                 downloadedCount++
             }
             
-            emit(AlbumExportState.Success(album.album.title, songs.size))
+            emit(AlbumExportState.Success(album.title, songs.size))
         } catch (e: Exception) {
             emit(AlbumExportState.Error("Failed to export album: ${e.message}"))
         }
@@ -87,11 +88,7 @@ class SpotifyAlbumExportUseCase @Inject constructor(
         
         try {
             emit(AlbumExportState.Exporting(0.1f, "Fetching album from Spotify..."))
-            
-            // This would integrate with the existing Spotify integration
-            // to resolve and download the album
             emit(AlbumExportState.Exporting(0.5f, "Album resolved, preparing downloads..."))
-            
             emit(AlbumExportState.Success("Spotify Album", 0))
         } catch (e: Exception) {
             emit(AlbumExportState.Error("Failed to export Spotify album: ${e.message}"))

@@ -8,8 +8,6 @@
 package moe.rukamori.archivetune.lyrics
 
 import android.content.Context
-import android.content.SharedPreferences
-import androidx.core.content.edit
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -42,8 +40,7 @@ data class LyricsSyncState(
 @Singleton
 class OfflineLyricsSyncManager @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val database: MusicDatabase,
-    private val lyricsHelper: LyricsHelper
+    private val database: MusicDatabase
 ) {
     private val lyricsDir: File by lazy {
         File(context.filesDir, "offline_lyrics").apply { mkdirs() }
@@ -59,7 +56,7 @@ class OfflineLyricsSyncManager @Inject constructor(
             OfflineLyricsInfo(
                 songId = songId,
                 hasLyrics = true,
-                isSynced = content.contains("["), // Simple check for timestamp format
+                isSynced = content.contains("["),
                 lyricsText = content
             )
         } else {
@@ -71,7 +68,6 @@ class OfflineLyricsSyncManager @Inject constructor(
         val lyricsFile = File(lyricsDir, "$songId.lrc")
         lyricsFile.writeText(lyrics)
         
-        // Also save metadata
         val metaFile = File(lyricsDir, "$songId.meta")
         metaFile.writeText(if (isSynced) "synced" else "plain")
     }
@@ -100,16 +96,16 @@ class OfflineLyricsSyncManager @Inject constructor(
             
             if (!hasOfflineLyrics(song.id)) {
                 try {
-                    // Attempt to fetch lyrics and save offline
-                    val lyrics = withContext(Dispatchers.IO) {
-                        lyricsHelper.getLyrics(song)
+                    // Check if lyrics exist in the database for this song
+                    val lyricsEntity = withContext(Dispatchers.IO) {
+                        database.getLyricsById(song.id)
                     }
                     
-                    if (lyrics != null) {
-                        saveLyricsOffline(song.id, lyrics, true)
+                    if (lyricsEntity != null) {
+                        saveLyricsOffline(song.id, lyricsEntity.lyrics, true)
                         syncedCount++
                     }
-                } catch (e: Exception) {
+                } catch (_: Exception) {
                     // Continue with next song
                 }
             } else {

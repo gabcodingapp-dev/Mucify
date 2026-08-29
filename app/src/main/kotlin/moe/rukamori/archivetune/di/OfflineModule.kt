@@ -14,7 +14,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import moe.rukamori.archivetune.db.MusicDatabase
-import moe.rukamori.archivetune.lyrics.LyricsHelper
 import moe.rukamori.archivetune.lyrics.OfflineLyricsSyncManager
 import moe.rukamori.archivetune.offline.OfflineDownloadManager
 import moe.rukamori.archivetune.playback.DownloadUtil
@@ -37,9 +36,8 @@ object OfflineModule {
     @Singleton
     fun provideOfflineLyricsSyncManager(
         @ApplicationContext context: Context,
-        database: MusicDatabase,
-        lyricsHelper: LyricsHelper
+        database: MusicDatabase
     ): OfflineLyricsSyncManager {
-        return OfflineLyricsSyncManager(context, database, lyricsHelper)
+        return OfflineLyricsSyncManager(context, database)
     }
 }
