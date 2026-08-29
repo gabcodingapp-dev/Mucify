@@ -1142,4 +1142,36 @@
     <string name="mucify_credits">Made with ❤️ by Gab</string>
     <string name="new_badge">NEW</string>
 
+
+    <!-- Mucify NEW Features v2 -->
+    <string name="sleep_timer">Sleep Timer</string>
+    <string name="sleep_timer_desc">Music fades out gently while you drift off</string>
+    <string name="sleep_timer_start">Start Timer</string>
+    <string name="sleep_timer_cancel">Cancel Timer</string>
+    <string name="sleep_timer_add_time">+15 Minutes</string>
+    <string name="sleep_timer_fade">Gradual Volume Fade</string>
+    <string name="sleep_timer_remaining">%s remaining</string>
+    <string name="sleep_timer_volume">Volume: %d%%</string>
+    <string name="listening_streaks">Listening Streaks</string>
+    <string name="streak_current">Current Streak</string>
+    <string name="streak_longest">Longest Streak</string>
+    <string name="streak_days">%d days</string>
+    <string name="streak_today">Today</string>
+    <string name="streak_minutes">%d min today</string>
+    <string name="streak_level">Level %d</string>
+    <string name="streak_xp">%d / %d XP</string>
+    <string name="streak_achievements">Achievements</string>
+    <string name="streak_total_hours">%d hours total</string>
+    <string name="taste_dna">Music Taste DNA</string>
+    <string name="taste_dna_desc">Your unique listening profile</string>
+    <string name="taste_energy">Energy</string>
+    <string name="taste_mood">Mood</string>
+    <string name="taste_diversity">Diversity</string>
+    <string name="taste_discovery">Discovery</string>
+    <string name="taste_loyalty">Loyalty</string>
+    <string name="taste_type">Your Type</string>
+    <string name="taste_top_genres">Top Genres</string>
+    <string name="new_announcement_title">Welcome to Mucify!</string>
+    <string name="new_announcement_body">Mucify is your new home for music. Enjoy offline downloads, Spotify album export, synced lyrics, sleep timer, listening streaks, and more. Made with love by Gab.</string>
+
 </resources>

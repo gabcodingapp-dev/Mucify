@@ -1,8 +1,7 @@
 /*
  * Mucify (2026)
- * Dependency Injection Module for Offline Features
- * © Gabriel — github.com/gabcodingapp-dev
- * GPL-3.0 License
+ * DI Module for All Mucify Features
+ * © Gab — github.com/gabcodingapp-dev
  */
 
 package moe.rukamori.archivetune.di
@@ -14,6 +13,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import moe.rukamori.archivetune.db.MusicDatabase
+import moe.rukamori.archivetune.features.sleeptimer.SleepTimerManager
+import moe.rukamori.archivetune.features.streaks.ListeningStreakManager
+import moe.rukamori.archivetune.features.taste.MusicTasteDna
 import moe.rukamori.archivetune.lyrics.OfflineLyricsSyncManager
 import moe.rukamori.archivetune.offline.OfflineDownloadManager
 import moe.rukamori.archivetune.playback.DownloadUtil
@@ -39,5 +41,29 @@ object OfflineModule {
         database: MusicDatabase
     ): OfflineLyricsSyncManager {
         return OfflineLyricsSyncManager(context, database)
+    }
+    
+    @Provides
+    @Singleton
+    fun provideSleepTimerManager(
+        @ApplicationContext context: Context
+    ): SleepTimerManager {
+        return SleepTimerManager(context)
+    }
+    
+    @Provides
+    @Singleton
+    fun provideListeningStreakManager(
+        @ApplicationContext context: Context
+    ): ListeningStreakManager {
+        return ListeningStreakManager(context)
+    }
+    
+    @Provides
+    @Singleton
+    fun provideMusicTasteDna(
+        database: MusicDatabase
+    ): MusicTasteDna {
+        return MusicTasteDna(database)
     }
 }

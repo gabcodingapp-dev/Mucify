@@ -7,6 +7,8 @@
         <item name="android:windowMinWidthMajor">100%</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">#ffffff</item>
+        <item name="android:windowEnableSplitTouch">true</item>
+        <item name="android:splitMotionEvents">true</item>
         <item name="android:enforceNavigationBarContrast" tools:ignore="NewApi">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
