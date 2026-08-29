@@ -1,5 +1,5 @@
 [versions]
-splashscreen = "1.2.0-alpha03"
+splashscreen = "1.0.1"
 agp = "9.2.1"
 annotation = "1.10.0"
 json = "20250517"
