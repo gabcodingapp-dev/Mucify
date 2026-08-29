@@ -325,7 +325,7 @@ object Updater {
             client.get("https://api.github.com/repos/rukamori/ArchiveTune/releases?per_page=$perPage") {
                 headers {
                     append("Accept", "application/vnd.github+json")
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "Mucify")
                     if (!cachedEtag.isNullOrBlank()) {
                         append("If-None-Match", cachedEtag)
                     }
@@ -588,7 +588,7 @@ object Updater {
         val response: HttpResponse =
             client.get("$CanaryReleaseBaseUrl/latest") {
                 headers {
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "Mucify")
                 }
             }
         response.bodyAsText()
@@ -622,7 +622,7 @@ object Updater {
             client.get("https://api.github.com/repos/rukamori/canary/releases?per_page=$perPage") {
                 headers {
                     append("Accept", "application/vnd.github+json")
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "Mucify")
                     if (!cachedEtag.isNullOrBlank()) {
                         append("If-None-Match", cachedEtag)
                     }
@@ -653,7 +653,7 @@ object Updater {
             client.get(CanaryWorkflowRunsUrl) {
                 headers {
                     append("Accept", "application/vnd.github+json")
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "Mucify")
                 }
             }
         val responseBody = response.bodyAsText()

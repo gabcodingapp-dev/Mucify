@@ -284,7 +284,7 @@
     <string name="crossfade_gapless_description">Затухание и появление без перекрываний звука.</string>
     <string name="about_position_yuki">Чисто для показа 😂 | Админ</string>
     <string name="about_position_mo_agamy">Базовая структура | Metrolist</string>
-    <string name="about_position_zion_huang">Создатель InnerTune · Основатель проектов Metrolist, ArchiveTune и других форков</string>
+    <string name="about_position_zion_huang">Создатель InnerTune · Основатель проектов Metrolist, Mucify и других форков</string>
     <string name="about_content_desc_github">GitHub</string>
     <string name="about_content_desc_website">Веб-сайт</string>
     <string name="about_content_desc_discord">Discord</string>
@@ -328,7 +328,7 @@
     <string name="aod_customize_entry_desc">Настройка always-on экрана проигрывателя</string>
     <string name="music_recognition_settings">Настройки распознавания музыки</string>
     <string name="music_recognition_background_title">Распознавание в фоне</string>
-    <string name="music_recognition_background_description">Когда включено, плитка Быстрых Настроек распознает аудио играющие на этом устройстве без открытия ArchiveTune.</string>
+    <string name="music_recognition_background_description">Когда включено, плитка Быстрых Настроек распознает аудио играющие на этом устройстве без открытия Mucify.</string>
     <string name="music_recognition_background_foss_description">Распознавание в фоне недоступно в FOSS версии. Плитка Быстрых Настроек откроет меню распознавания.</string>
     <string name="music_recognition_notification_channel_name">Распознавание музыки</string>
     <string name="music_recognition_notification_channel_description">Прогресс распознавания музыки и результаты</string>

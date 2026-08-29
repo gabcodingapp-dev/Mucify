@@ -12,9 +12,7 @@ body:
   - type: checkboxes
     id: no-ai-policy
     attributes:
-      label: NO AI / NO LLM POLICY
       options:
-        - label: I've read the [NO AI / NO LLM POLICY](../../CONTRIBUTING.md#no-ai--no-llm-policy) and understand I may be blocked from the repository if it is violated.
           required: true
 
   - type: checkboxes

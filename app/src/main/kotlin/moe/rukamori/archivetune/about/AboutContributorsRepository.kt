@@ -142,7 +142,7 @@ class AboutContributorsRepository
                 client.get("https://api.github.com/repos/$owner/$repo/contributors?per_page=$perPage") {
                     headers {
                         append("Accept", "application/vnd.github+json")
-                        append("User-Agent", "ArchiveTune")
+                        append("User-Agent", "Mucify")
                     }
                 }
             return ContributorsNetworkResult(
@@ -195,6 +195,6 @@ class AboutContributorsRepository
         private companion object {
             const val ContributorsLimit = 20
             const val GitHubOwner = "rukamori"
-            const val GitHubRepo = "ArchiveTune"
+            const val GitHubRepo = "Mucify"
         }
     }

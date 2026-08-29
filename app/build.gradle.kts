@@ -62,7 +62,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-    applicationId = "moe.rukamori.archivetune"
+    applicationId = "com.gabriel.mucify"
         minSdk = 26
         targetSdk = 37
         versionCode = 140
