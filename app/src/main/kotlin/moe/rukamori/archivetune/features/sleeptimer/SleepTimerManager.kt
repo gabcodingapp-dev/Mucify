@@ -115,7 +115,7 @@ class SleepTimerManager @Inject constructor(
         if (_state.value.isActive) {
             val remaining = _state.value.remainingSeconds
             cancel()
-            startTimer(((remaining + minutes * 60) / 60).toInt(), fadeEnabled = true)
+            startTimer(((remaining + minutes * 60) / 60).toInt())
         }
     }
 }
