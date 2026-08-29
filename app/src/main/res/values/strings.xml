@@ -1120,7 +1120,6 @@
     <string name="scheduled_backup_load_failed">Scheduled backup settings could not be loaded</string>
     <string name="scheduled_backup_update_failed">Scheduled backup settings could not be saved</string>
     <string name="gatekeeper_connection_blocked">Connection blocked by Mucify Remote. This app could not be verified as an official Mucify build. Install an official build from https://github.com/rukamori/Mucify or https://t.me/MucifyGC.</string>
-</resources>
 
     <!-- Mucify New Features -->
     <string name="offline_mode">Offline Mode</string>
@@ -1144,3 +1143,5 @@
     <string name="splash_tagline">Your Music, Your Way</string>
     <string name="mucify_credits">Mucify is based on ArchiveTune by Rukamori. We are grateful for the incredible foundation.</string>
     <string name="new_badge">NEW</string>
+
+</resources>
