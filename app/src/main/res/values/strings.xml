@@ -1128,7 +1128,6 @@
     <string name="download_statistics">Download Statistics</string>
     <string name="downloaded">Downloaded</string>
     <string name="pending">Pending</string>
-    <string name="storage">Storage</string>
     <string name="offline_lyrics_sync">Offline Lyrics Sync</string>
     <string name="offline_lyrics_sync_desc">Download synced lyrics for offline playback. Lyrics will be available even without internet.</string>
     <string name="sync_all_lyrics">Sync All Lyrics Offline</string>
@@ -1139,7 +1138,6 @@
     <string name="quick_actions">Quick Actions</string>
     <string name="pause_all">Pause All</string>
     <string name="resume_all">Resume All</string>
-    <string name="clear_all_downloads">Clear All Downloads</string>
     <string name="splash_tagline">Your Music, Your Way</string>
     <string name="mucify_credits">Mucify is based on ArchiveTune by Rukamori. We are grateful for the incredible foundation.</string>
     <string name="new_badge">NEW</string>
