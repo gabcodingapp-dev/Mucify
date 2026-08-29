@@ -6,10 +6,17 @@
         <item name="android:windowMinWidthMinor">100%</item>
         <item name="android:windowMinWidthMajor">100%</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">#ffffff</item>
+        <item name="android:windowBackground">#0F0F23</item>
         <item name="android:enforceNavigationBarContrast" tools:ignore="NewApi">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Splash screen configuration -->
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">#0F0F23</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@mipmap/ic_launcher</item>
+    </style>
+
+    <style name="Theme.Mucify.Splash" parent="Theme.Mucify">
+        <item name="android:windowBackground">@color/ic_launcher_background</item>
     </style>
 
     <style name="Theme.Mucify.Transparent" parent="android:style/Theme.Material.Light.NoActionBar">

@@ -28,6 +28,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.AnimatedVisibility
@@ -300,7 +301,6 @@ import moe.rukamori.archivetune.utils.rememberPreference
 import moe.rukamori.archivetune.utils.reportException
 import moe.rukamori.archivetune.utils.setAppLocale
 import moe.rukamori.archivetune.viewmodels.BackupCategory
-import moe.rukamori.archivetune.ui.screens.SplashScreen
 import moe.rukamori.archivetune.viewmodels.BackupRestoreViewModel
 import moe.rukamori.archivetune.viewmodels.GatekeeperViewModel
 import moe.rukamori.archivetune.viewmodels.HomeViewModel
@@ -509,6 +509,7 @@ class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -559,19 +560,13 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            var showSplash by remember { mutableStateOf(true) }
             val gatekeeperViewModel: GatekeeperViewModel = hiltViewModel()
             LaunchedEffect(Unit) {
                 gatekeeperViewModel.blockedMessages.collect { message ->
                     Toast.makeText(this@MainActivity, message, Toast.LENGTH_LONG).show()
                 }
             }
-
-            if (showSplash) {
-                SplashScreen(onSplashComplete = { showSplash = false })
-                return@setContent
-            }
-
+            
             val updateChannel by rememberEnumPreference(UpdateChannelKey, defaultValue = defaultUpdateChannel)
 
             LaunchedEffect(Unit) {
@@ -3184,6 +3179,7 @@ private fun OnlineSearchSortMenu(
             }
         }
     }
+
 }
 
 private fun Context.isTvDevice(): Boolean {
